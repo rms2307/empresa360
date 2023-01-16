@@ -3,6 +3,8 @@ import Home from '@/views/HomeView.vue'
 import Login from '@/views/LoginView.vue'
 import Vendas from '@/components/vendas/VendasComponent.vue'
 import Servicos from '@/components/servicos/ServicosComponent.vue'
+import Leads from '@/components/vendas/LeadsComponent.vue'
+import Contratos from '@/components/vendas/ContratosComponent.vue'
 import Site from '@/views/SiteView.vue'
 
 var routes = [
@@ -17,6 +19,10 @@ var routes = [
       {
         path: 'vendas',
         component: Vendas,
+        children: [
+          { path: 'leads', component: Leads },
+          { path: 'contratos', component: Contratos },
+        ],
       },
       {
         path: 'servicos',

@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/views/HomeView.vue'
 import Login from '@/views/LoginView.vue'
+import Vendas from '@/components/vendas/VendasComponent.vue'
+import Servicos from '@/components/servicos/ServicosComponent.vue'
 import Site from '@/views/SiteView.vue'
 
 var routes = [
@@ -11,6 +13,16 @@ var routes = [
   {
     path: '/home',
     component: Home,
+    children: [
+      {
+        path: 'vendas',
+        component: Vendas,
+      },
+      {
+        path: 'servicos',
+        component: Servicos,
+      },
+    ],
   },
   {
     path: '/login',

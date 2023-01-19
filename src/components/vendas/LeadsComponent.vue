@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="lead in leads" :key="lead.id">
+        <tr v-for="lead in dados" :key="lead.id">
           <td>{{ lead.id }}</td>
           <td>{{ lead.nome }}</td>
           <td>{{ lead.telefone }}</td>
@@ -28,22 +28,13 @@
   </div>
 </template>
 <script>
+import ApiMixin from "@/mixins/ApiMixin";
+
 export default {
   name: "LeadsComponent",
-  data: () => ({
-    leads: null,
-  }),
-  methods: {
-    obterLeads() {
-      fetch("http://localhost:3000/leads")
-        .then((resp) => resp.json())
-        .then((resp) => {
-          this.leads = resp;
-        });
-    },
-  },
+  mixins: [ApiMixin],
   created() {
-    this.obterLeads();
+    this.obterDados("http://localhost:3000/leads");
   },
 };
 </script>

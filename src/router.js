@@ -7,6 +7,7 @@ import Leads from '@/components/vendas/LeadsComponent.vue'
 import Contratos from '@/components/vendas/ContratosComponent.vue'
 import Dashboard from '@/components/dashboard/DashboardComponent.vue'
 import Site from '@/views/SiteView.vue'
+import Lead from '@/components/vendas/LeadComponent.vue'
 
 var routes = [
   {
@@ -22,6 +23,7 @@ var routes = [
         component: Vendas,
         children: [
           { path: 'leads', component: Leads },
+          { path: 'leads/:id', component: Lead },
           { path: 'contratos', component: Contratos },
         ],
       },

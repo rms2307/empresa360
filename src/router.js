@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/views/HomeView.vue'
 import Login from '@/views/LoginView.vue'
 import Vendas from '@/components/vendas/VendasComponent.vue'
+import VendasPadrao from '@/components/vendas/VendasPadraoComponent.vue'
 import Servicos from '@/components/servicos/ServicosComponent.vue'
 import Leads from '@/components/vendas/LeadsComponent.vue'
 import Contratos from '@/components/vendas/ContratosComponent.vue'
@@ -22,14 +23,16 @@ var routes = [
         path: 'vendas',
         component: Vendas,
         children: [
-          { path: 'leads', component: Leads },
-          { path: 'leads/:id', component: Lead },
-          { path: 'contratos', component: Contratos },
+          { path: 'leads', component: Leads, name: 'leads' },
+          { path: 'leads/:id', component: Lead, name: 'lead' },
+          { path: 'contratos', component: Contratos, name: 'contratos' },
+          { path: '', component: VendasPadrao },
         ],
       },
       {
         path: 'servicos',
         component: Servicos,
+        name: 'servicos',
       },
       {
         path: 'dashboard',

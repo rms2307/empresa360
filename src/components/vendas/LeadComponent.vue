@@ -29,14 +29,22 @@
       </div>
     </div>
 
-    <div class="col-auto">
-      <button class="btn btn-primary">Atualizar</button>
+    <div class="col-auto d-flex justify-content-between">
+      <button
+        type="button"
+        class="btn btn-warning"
+        @click="$router.push({ name: 'leads' })"
+      >
+        Voltar
+      </button>
+      <button type="button" class="btn btn-primary">Atualizar</button>
     </div>
   </div>
 </template>
 
 <script>
 import ApiMixin from "@/mixins/ApiMixin";
+
 export default {
   name: "LeadComponent",
   mixins: [ApiMixin],

@@ -15,8 +15,12 @@
           <td>{{ lead.nome }}</td>
           <td>{{ lead.telefone }}</td>
           <td>
-            <router-link
+            <!-- <router-link
               :to="`/home/vendas/leads/${lead.id}`"
+              class="btn btn-sm btn-primary"
+            > -->
+            <router-link
+              :to="{ name: 'lead', params: { id: lead.id } }"
               class="btn btn-sm btn-primary"
             >
               <i class="bi bi-pencil-square" style="cursor: pointer"></i>
